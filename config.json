@@ -1,0 +1,71 @@
+{
+    "setup": {
+        "OpenAI_API_key": "insert-your-API-key-here",
+        "Anthropic_API_key": "insert-your-API-key-here",
+        "AWS_API_key": "insert-your-API-key-here",
+        "number_of_reports": 50,
+        "gold_or_ai": "gold",
+        "ai_report_or_labels": "labels",
+        "model_type": "Reflexion",
+        "scan_type": "canine_thorax",
+        "load_or_save": "save",
+        "gold_datapath": "data/gold_canine_thorax.csv",
+        "input_datapath": "data/canine_thorax_scoring.csv",
+        "cleaned_datapath": "data/cleaned_canine_thorax.csv",
+        "results_datapath": "data/results/Reflexion_canine_thorax.csv",
+        "matrix_path": "data/results/Reflexion_canine_thorax_confusion_matrix.csv",
+        "model_name": "gpt-4-mini"
+    },
+    "prompts": {
+        "canine_thorax": {
+                "Reflexion": {
+                "actor_path": "data/prompts/canine_thorax/Reflexion/actor_prompt.txt",
+                "evaluator_path": "data/prompts/canine_thorax/Reflexion/evaluator_prompt.txt",
+                "selfreflector_path": "data/prompts/canine_thorax/Reflexion/selfreflector_prompt.txt"
+            },
+            "ChainofThought" : {
+                "condition_id_path": "data/prompts/canine_thorax/ChainofThought/condition_id_prompt.txt"
+            }
+        },
+        "canine_abdomen": {
+            "Reflexion": {
+                "actor_path": "data/prompts/canine_abdomen/Reflexion/actor_prompt.txt",
+                "evaluator_path": "data/prompts/canine_abdomen/Reflexion/evaluator_prompt.txt",
+                "selfreflector_path": "data/prompts/canine_abdomen/Reflexion/selfreflector_prompt.txt"
+            },
+            "ChainofThought" : {
+                "condition_id_path": "data/prompts/canine_abdomen/ChainofThought/condition_id_prompt.txt"
+            }
+        },
+        "feline_thorax": {
+            "Reflexion": {
+                "actor_path": "data/prompts/feline_thorax/Reflexion/actor_prompt.txt",
+                "evaluator_path": "data/prompts/feline_thorax/Reflexion/evaluator_prompt.txt",
+                "selfreflector_path": "data/prompts/feline_thorax/Reflexion/selfreflector_prompt.txt"
+            },
+            "ChainofThought" : {
+                "condition_id_path": "data/prompts/feline_thorax/ChainofThought/condition_id_prompt.txt"
+            }
+        }
+    },
+    "conditions": {
+        "canine_thorax_conditions": ["bronchiectasis", "bronchitis", "cardiomegaly", "diseased_lungs",
+                "esophagitis", "focal_caudodorsal_lung", "focal_perihilar", 
+                "hypo_plastic_trachea", "interstitial", "left_sided_cardiomegaly", 
+                "pericardial_effusion", "perihilar_infiltrate", "pleural_effusion", 
+                "pneumonia", "pulmonary_hypoinflation", "pulmonary_nodules", 
+                "pulmonary_vessel_enlargement", "right_sided_cardiomegaly", "rtm", 
+                "thoracic_lymphadenopathy", "vhs_v2"],
+        "feline_thorax_conditions": ["bronchiectasis", "bronchitis", "cardiomegaly", "diseased_lungs", 
+                "esophagitis", "Fe_Alveolar", "focal_caudodorsal_lung", 
+                "focal_perihilar", "hypo_plastic_trachea", "interstitial", 
+                "left_sided_cardiomegaly", "pericardial_effusion", 
+                "perihilar_infiltrate", "pleural_effusion", "pneumonia", 
+                "pulmonary_hypoinflation", "pulmonary_nodules", 
+                "pulmonary_vessel_enlargement", "right_sided_cardiomegaly", 
+                "rtm", "thoracic_lymphadenopathy"],
+        "canine_abdomen_conditions": ["ascites", "colitis", "gastritis", "hepatomegaly", "liver_mass", 
+                "microhepatia", "pancreatitis", "small_intestinal_obstruction", 
+                "splenic_mass", "splenomegaly"]
+    }
+}
